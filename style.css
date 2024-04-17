@@ -1,0 +1,199 @@
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* hiding the up/down arrows for number type */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+body {
+    position: relative;
+    background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+}
+
+.title {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.input-label-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin: 20px 0;
+}
+
+.time-input-field {
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding: 4px 8px;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+
+.time-input-field:focus-visible {
+    outline: none;
+}
+
+.timer-container {
+    border: 2px solid #fff;
+    border-radius: 4px;
+    width: 600px;
+    position: relative;
+    margin: 10px auto;
+}
+
+.time-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    width: 100%;
+    height: 280px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.time-wrapper > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.time-wrapper > div {
+    cursor: pointer;
+}
+
+.player1-title, .player2-title {
+    font-weight: 700;
+    text-decoration: underline;
+    width: 100%;
+}
+
+.opaque-bg-p1, .opaque-bg-p2  {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    z-index: -1;
+}
+
+.opaque-bg-p1.active, .opaque-bg-p2.active {
+    background-color: #ccb3c9;
+    opacity: .3;
+}
+
+button {
+    background-color: #B6F492;
+    border: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 15px;
+}
+
+.start-reset-btn {
+    background-color: #B6F492;
+    border: transparent;
+    border: 1.5px solid #ccc;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 8px 15px;    
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    position: fixed;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.time-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+button:hover {
+    color: white;
+    background-color: #338B93;
+    cursor: pointer;
+}
+
+.tapper {
+    position: absolute;
+    width: 70%;
+    height: 8px !important;
+    background: #000;
+    margin-top: 30px;
+    top: 70%;
+    left: calc(20% - 30px);
+    transition: transform 0.2s ease;
+    z-index: -1;
+}
+
+.tapper.left {
+    transform: rotate(-5deg) translateY(-20px); /* Rotate and move left side down */
+}
+
+.tapper.right {
+    transform: rotate(5deg) translateY(-20px); /* Rotate and move right side down */
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.message > .losing-player {
+    text-transform: capitalize;
+}
+
+.hide-tapper {
+    display: block;
+}
+
+section {
+    margin-top: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    section {
+        margin-top: 40%;
+    }
+    .hide-tapper {
+        display: none;
+    }
+    .timer-container {
+        width: 100%;
+    }
+    .time-wrapper {
+        width: 100%;
+        height: 350px;
+        flex-direction: column;
+    }
+    .opaque-bg-p1, .opaque-bg-p2  {
+        height: 50%;
+        width: 100%;
+    }
+}
