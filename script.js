@@ -33,7 +33,7 @@ function onTimerEnd(player = "") {
     document.body.innerHTML = "";
     renderStoppingTimer();
   });
-  document.body.appendChild(resetGame);
+  document.getElementById("chess-timer").appendChild(resetGame);
 }
 
 function renderStoppingTimer() {
@@ -199,5 +199,5 @@ function renderStoppingTimer() {
     // }
   });
 
-  document.body.appendChild(startBtn);
+  section.appendChild(startBtn);
 }

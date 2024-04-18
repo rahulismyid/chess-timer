@@ -109,13 +109,9 @@ button {
     font-weight: 700;
     border-radius: 4px;
     padding: 8px 15px;    
-    position: relative;
     margin: 0 auto;
     display: flex;
-    position: fixed;
-    bottom: 15%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    margin-bottom: 20px;
 }
 
 .time-container {
@@ -170,17 +166,19 @@ button:hover {
 }
 
 section {
-    margin-top: 10%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1300px) {
     section {
-        margin-top: 40%;
+        margin: 0;
     }
+}
+
+@media only screen and (max-width: 768px) {
     .hide-tapper {
         display: none;
     }
